@@ -1,12 +1,26 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { BrowserRouter } from 'react-router-dom';
+import { BreweryListProvider } from './contexts/BreweryListContext';
+import { BreweryProvider } from './contexts/BreweryContext';
+import App from './components/App/App';
+import { faBeer, faPhone, faMouse } from '@fortawesome/free-solid-svg-icons';
+import { library } from '@fortawesome/fontawesome-svg-core';
 import './index.css';
-import App from './App';
-import * as serviceWorker from './serviceWorker';
 
-ReactDOM.render(<App />, document.getElementById('root'));
+library.add(
+    faBeer,
+    faPhone,
+    faMouse,
+)
 
-// If you want your app to work offline and load faster, you can change
-// unregister() to register() below. Note this comes with some pitfalls.
-// Learn more about service workers: https://bit.ly/CRA-PWA
-serviceWorker.unregister();
+ReactDOM.render(
+    <BrowserRouter>
+        <BreweryListProvider>
+            <BreweryProvider>
+                <App />
+            </BreweryProvider>
+        </BreweryListProvider>
+    </BrowserRouter>,
+    document.getElementById('root')
+);
