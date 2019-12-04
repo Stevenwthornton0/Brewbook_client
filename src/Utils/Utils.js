@@ -1,5 +1,4 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 export function displayPhone(brewery) {
@@ -19,11 +18,11 @@ export function displayPhone(brewery) {
 export function displayWebsite(brewery) {
     if (brewery.website_url) {
         return (
-            <Link to={brewery.website_url} target='_blank'>
+            <a href={brewery.website_url} target='_blank' rel='noopener noreferrer'>
                 <FontAwesomeIcon className='logo' icon='mouse' />
                 {' '}
                 {brewery.website_url}
-            </Link>
+            </a>
         )
     }
     return null

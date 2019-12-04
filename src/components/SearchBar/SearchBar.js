@@ -27,16 +27,16 @@ class SearchBar extends Component {
             BreweriesApiService.getBreweries(city, state, page)
                 .then(res => {
                     if (res.length < PAGE_SIZE) {
-                        res.map(brewery => {
+                        res.forEach(brewery => 
                             listOfBreweries.push(brewery)
-                        })
+                        )
                         this.setState({
                             maxPage: Math.ceil(listOfBreweries.length / 20),
                             renderList: true
                         })
                     } else {
                         page = page + 1
-                        res.map(brewery => {
+                        res.forEach(brewery => {
                             listOfBreweries.push(brewery)
                         })
                         fetch()

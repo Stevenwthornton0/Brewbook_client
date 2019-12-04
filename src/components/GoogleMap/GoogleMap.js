@@ -10,8 +10,8 @@ class GoogleMap extends Component {
 
     render() {
         const mapStyles = {
-            width: '50%',
-            height: '50%'
+            width: '500px',
+            height: '100px'
         };
 
         const latitude = this.props.latitude;

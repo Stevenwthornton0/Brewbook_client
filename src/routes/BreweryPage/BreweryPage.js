@@ -72,7 +72,7 @@ class BreweryPage extends Component {
             <div>
                 <h1>{brewery.name}</h1>
                 
-                {this.displayMap(brewery.latitude, brewery.longitude)}
+                {/* {this.displayMap(brewery.latitude, brewery.longitude)} */}
                 <div className='contact-container'>
                     {displayPhone(brewery)}
                     {displayWebsite(brewery)}
