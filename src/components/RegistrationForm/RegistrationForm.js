@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import AuthApiService from '../../services/auth-api-service';
-import { States } from '../../Utils/Utils';
+import { Input, Button } from '../../Utils/Utils';
+import './RegistrationForm.css';
 
 export default class RegistrationForm extends Component {
     static defaultProps = {
@@ -19,7 +20,7 @@ export default class RegistrationForm extends Component {
 
     handleSubmit = ev => {
         ev.preventDefault()
-        const { first_name, last_name, user_name, password, city, state } = ev.target;
+        const { first_name, last_name, user_name, password } = ev.target;
         console.log(first_name.value)
 
         this.setState({ error: null });
@@ -28,16 +29,13 @@ export default class RegistrationForm extends Component {
             last_name: last_name.value,
             user_name: user_name.value,
             password: password.value,
-            city: city.value,
-            state: this.toSnakeCase(state.value)
+            admin: 'false'
         })
             .then(user => {
                 first_name.value = ''
                 last_name.value = ''
                 user_name.value = ''
                 password.value = ''
-                city.value = ''
-                state.value = ''
                 this.props.onRegistrationSuccess()
             })
             .catch(res => {
@@ -59,7 +57,7 @@ export default class RegistrationForm extends Component {
                     <label htmlFor='RegistrationForm_first-name'>
                         First Name
                     </label>
-                    <input
+                    <Input
                         name='first_name'
                         type='text'
                         required
@@ -70,7 +68,7 @@ export default class RegistrationForm extends Component {
                     <label htmlFor='RegistrationForm_last-name'>
                         Last Name
                     </label>
-                    <input
+                    <Input
                         name='last_name'
                         type='text'
                         required
@@ -81,7 +79,7 @@ export default class RegistrationForm extends Component {
                     <label htmlFor='RegistrationForm_user-name'>
                         User Name
                     </label>
-                    <input
+                    <Input
                         name='user_name'
                         type='text'
                         required
@@ -92,33 +90,16 @@ export default class RegistrationForm extends Component {
                     <label htmlFor='RegistrationForm_password'>
                         Password
                     </label>
-                    <input
+                    <Input
                         name='password'
                         type='password'
                         required
                         id='RegistrationForm_password'
                     />
                 </div>
-                <div className='city'>
-                    <label htmlFor='RegistrationForm_city'>
-                        City
-                    </label>
-                    <input
-                        name='city'
-                        type='text'
-                        required
-                        id='RegistrationForm_city'
-                    />
-                </div>
-                <div className='state'>
-                    <label htmlFor='RegistrationForm_state'>
-                        State
-                    </label>
-                    <States />
-                </div>
-                <button type='submit'>
+                <Button type='submit'>
                     Register
-                </button>
+                </Button>
             </form>
         )
     }

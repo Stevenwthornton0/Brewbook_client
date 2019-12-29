@@ -1,9 +1,10 @@
-.LoginForm {
+.RegistrationForm {
     width: 250px;
-    height: 200px;
+    height: 450px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    margin-top: 15px;
 }
 
 label {

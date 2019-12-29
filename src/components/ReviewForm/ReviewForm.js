@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import BreweryContext from '../../contexts/BreweryContext';
 import BreweriesApiService from '../../services/breweries-api-service';
+import { Textarea, Button } from '../../Utils/Utils';
+import './ReviewForm.css'
 
 export default class ReviewForm extends Component {
     static contextType = BreweryContext;
@@ -20,13 +22,13 @@ export default class ReviewForm extends Component {
     render() {
         return (
             <div>
-                <h2>Post a Review</h2>
+                <h3>Post a Review</h3>
                 <form
                     className='ReviewForm'
                     onSubmit={this.handleSubmit}
                 >
                     <label>Rating</label>
-                    <select id='rating' name='rating'>
+                    <select id='rating' className='rating'>
                         <option value='1'>1</option>
                         <option value='2'>2</option>
                         <option value='3'>3</option>
@@ -35,19 +37,19 @@ export default class ReviewForm extends Component {
                     </select>
 
                     <label>Review</label>
-                    <input 
+                    <Textarea
                         required
                         aria-label='Leave a review...'
-                        name='text'
+                        className='reviewText'
                         id='text'
                         cols='30'
-                        rows='3'
+                        rows='4'
                         placeholder='Leave a review..'
-                    />
+                    ></Textarea>
 
-                    <button type='submit'>
-                        Post Review
-                    </button>
+                    <Button type='submit'>
+                        Post
+                    </Button>
 
                 </form>
             </div>

@@ -42,6 +42,16 @@ const BreweriesApiService = {
             )
     },
 
+    deleteBreweryReview(breweryId, reviewId) {
+        return fetch(`${config.USER_API_ENDPOINT}/reviews/${breweryId}/${reviewId}`, {
+            method: 'DELETE',
+            headers: {
+                'content-type': 'application/json',
+                'authorization': `Bearer ${TokenService.getAuthToken()}`
+            },
+        })
+    },
+
     postReview(breweryId, rating, text) {
         return fetch(`${config.USER_API_ENDPOINT}/reviews`, {
             method: 'POST',

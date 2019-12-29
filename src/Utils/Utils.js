@@ -1,13 +1,15 @@
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import '../Utils/Utils.css';
 
 export function displayPhone(brewery) {
     if (brewery.phone) {
+      const phone = brewery.phone.replace(/(\d{3})(\d{3})(\d{4})/, "$1-$2-$3")
         return (
-            <p>
+            <p className='brewery phone'>
                 <FontAwesomeIcon className='logo' icon='phone' />
                 {' '}
-                {brewery.phone}
+                {phone}
 
             </p>
         ) 
@@ -15,17 +17,71 @@ export function displayPhone(brewery) {
     return null
 }
 
-export function displayWebsite(brewery) {
+export function displayWebsite_1(brewery) {
     if (brewery.website_url) {
         return (
-            <a href={brewery.website_url} target='_blank' rel='noopener noreferrer'>
-                <FontAwesomeIcon className='logo' icon='mouse' />
-                {' '}
-                {brewery.website_url}
-            </a>
+            <p className='brewery website'>
+              <FontAwesomeIcon className='logo' icon='mouse' />
+              {' '}
+              {brewery.website_url}
+            </p>
         )
     }
     return null
+}
+
+export function displayWebsite_2(brewery) {
+  if (brewery.website_url) {
+      return (
+          <a href={brewery.website_url} target='_blank' rel="noopener noreferrer" className='brewery website_2'>
+            <FontAwesomeIcon className='logo' icon='mouse' />
+            {' '}
+            {brewery.website_url}
+          </a>
+      )
+  }
+  return null
+}
+
+export function displayType(brewery) {
+  if (brewery.brewery_type) {
+    let content = brewery.brewery_type.charAt(0).toUpperCase() + brewery.brewery_type.slice(1)
+    return (
+      <p className='brewery type'>
+        <FontAwesomeIcon className='logo' icon='beer' />
+        {' '}
+        Brewery style: {content}
+      </p>
+    )
+  }
+  return null
+}
+
+export function displayDirections(brewery) {
+  if (brewery.street && brewery.city) {
+    const street = brewery.street.replace(/\s/g, '+')
+    const zip = brewery.postal_code.slice(0, -5)
+    const address = `https://www.google.com/maps/place/${street},+${brewery.city},+${brewery.state},+${zip}`
+    return (
+      <a href={address} className='brewery address' target='_blank' rel="noopener noreferrer">
+        <FontAwesomeIcon className='logo' icon='map-marker' />
+        {' '}
+        Get directions
+      </a>
+    )
+  }
+}
+
+export function Marker(props) {
+    const { color, name, } = props;
+    return (
+        <div className='marker'
+            style={{ backgroundColor: color, cursor: 'pointer' }}
+            title={name}
+        >
+            {name}
+        </div>
+    )
 }
 
 export function toSnakeCase(string) {
@@ -93,3 +149,43 @@ export function States() {
     </select>
     )
 }
+  
+  export function Hyph() {
+    return <span className='Hyph'>{' - '}</span>
+  }
+  
+  export function Button({ className, ...props }) {
+    return <button className={['Button', className].join(' ')} {...props} />
+  }
+  
+  export function Textarea({ className, ...props }) {
+    return (
+      <textarea className={['Textarea', className].join(' ')} {...props} />
+    )
+  }
+  
+  export function Input({ className, ...props }) {
+    return (
+      <input className={['Input', className].join(' ')} {...props} />
+    )
+  }
+  
+  export function Required({ className, ...props }) {
+    return (
+      <span className={['Required', className].join(' ')} {...props}>
+        &#42;
+      </span>
+    )
+  }
+  
+  export function Section({ className, list, ...props }) {
+    const classes = [
+      'Section',
+      list && 'Section--list',
+      className,
+    ].filter(Boolean).join(' ')
+    return (
+      <section className={classes} {...props} />
+    )
+  }
+  

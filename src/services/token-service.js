@@ -4,6 +4,11 @@ const TokenService = {
   saveAuthToken(token) {
     window.sessionStorage.setItem(config.TOKEN_KEY, token)
   },
+  
+  saveUsername(user_name) {
+    window.sessionStorage.setItem(config.USER_KEY, user_name)
+  },
+
   getAuthToken() {
     return window.sessionStorage.getItem(config.TOKEN_KEY)
   },

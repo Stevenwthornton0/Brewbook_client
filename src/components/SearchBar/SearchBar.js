@@ -4,6 +4,8 @@ import { States, toSnakeCase } from '../../Utils/Utils';
 import BreweryListContext from '../../contexts/BreweryListContext';    
 import SearchResults from './SearchResults/SearchResults';
 import PaginationPage from '../PaginationPage/PaginationPage';
+import LoaderSpinner from '../../Utils/LoaderSpinner';
+import { Input, Button } from '../../Utils/Utils';
 import './SearchBar.css';
 
 class SearchBar extends Component {
@@ -13,8 +15,9 @@ class SearchBar extends Component {
         super(props);
         this.state = {
             renderList: null,
+            waiting: false,
             page: 1,
-            maxPage: 1
+            numResults: 0
         }
     }
 
@@ -31,9 +34,12 @@ class SearchBar extends Component {
                             listOfBreweries.push(brewery)
                         )
                         this.setState({
+                            numResults: listOfBreweries.length,
                             maxPage: Math.ceil(listOfBreweries.length / 20),
+                            waiting: false,
                             renderList: true
                         })
+                        this.populatePages()
                     } else {
                         page = page + 1
                         res.forEach(brewery => {
@@ -82,13 +88,11 @@ class SearchBar extends Component {
         window.scrollTo(0, 0)
         BreweriesApiService.getBreweries(city, state, page)
             .then(this.context.setBreweryList)   
-        } 
+        }   
     }
 
     handlePagination = (page) => {
-        console.log(this.state.page)
         if (page === this.state.page) {
-            console.log('nope')
         } else {
             let { city, state } = this.state;
             city = toSnakeCase(city);
@@ -106,11 +110,47 @@ class SearchBar extends Component {
         } 
     }
 
+    populatePages = () => {
+        let pages = [];
+        let { maxPage } = this.state;
+
+        const add = () => {
+            if (maxPage < 1) {
+                pages.sort(function(a, b){return a-b})
+                this.context.setPages(pages)
+            } else {
+                pages.push(maxPage)
+                maxPage = maxPage - 1
+                add()
+            }
+        }
+
+        add()
+    }
+
+
+
+
+
+
+
+
     handleSubmit = ev => {
         ev.preventDefault()
+
+        this.setState({ 
+            renderList: false,
+            waiting: true,
+            page: 1,
+            maxPage: 1
+        })
+
         this.context.clearError()
+        this.context.clearBreweryList()
+        this.context.clearPages()
+        
         let { city, state } = ev.target;
-        let { page } = this.state
+        let page = 1
 
         this.getNumOfPages(city.value, state.value)
 
@@ -125,61 +165,73 @@ class SearchBar extends Component {
         BreweriesApiService.getBreweries(city, state, page)
             .then(this.context.setBreweryList)
             .catch(this.context.setError)
-    }
 
-    handleClear = () => {
-        this.context.clearBreweryList()
     }
     
     displayResults() {
-        return (
-            <div>
+        let content = 
+            <div className='resultsContainer'>
                 <SearchResults
                     city={this.state.city}
                     state={this.state.state}
+                    numResults={this.state.numResults}
                 />
                 <PaginationPage 
                     maxPage={this.state.maxPage}
+                    currentPage={this.state.page}
                     handlePrev={this.handlePrev}
                     handleNext={this.handleNext}
                     handlePagination={this.handlePagination}
                 />
             </div>
-        )
+            
+        return content
     }
 
+    displayLoading() {
+        if (this.state.waiting) {
+            return (
+                <div className='loaderContainer'>
+                    <LoaderSpinner />
+                </div>
+            )
+        }
+        return null
+    }
+    
     
 
     render() {
         return (
-            <div>
-                <form 
-                    className='SearchForm'
-                    onSubmit={this.handleSubmit}
-                >
-                    <div className='city'>
-                        <label htmlFor='SearchForm_city'>
-                            City
-                        </label>
-                        <input
-                            name='city'
-                            type='text'
-                            required
-                            id='SearchForm_city'
-                        />
-                    </div>
-                    <div className='state'>
-                        <label htmlFor='SearchForm_state'>
-                            State
-                        </label>
-                        <States />
-                    </div>
-                    <button type='submit'>
-                        Search
-                    </button>
-                    <input type='reset'/>
-                </form>
-                {this.state.renderList ? this.displayResults() : null}
+            <div className='mainContainer'>
+                <div className='formContainer'>
+                    <form 
+                        className='SearchForm'
+                        onSubmit={this.handleSubmit}
+                    >
+                        <div className='city'>
+                            <label htmlFor='SearchForm_city'>
+                                City
+                            </label>
+                            <Input
+                                name='city'
+                                type='text'
+                                required
+                                id='SearchForm_city'
+                            />
+                        </div>
+                        <div className='state'>
+                            <label htmlFor='SearchForm_state'>
+                                State
+                            </label>
+                            <States />
+                        </div>
+                        <Button type='submit'>
+                            Search
+                        </Button>
+                    </form>
+                </div>
+                {this.state.renderList ? this.displayResults() : this.displayLoading()}
             </div>
 
         )

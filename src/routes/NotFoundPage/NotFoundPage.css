@@ -1,0 +1,15 @@
+.NotFoundPage {
+    width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 160px;
+}
+
+.notFound {
+    margin-top: 0;
+    font-size: 30px;
+}
+
+.prevPage {
+    font-size: 18px;
+}

@@ -28,7 +28,6 @@ class App extends React.Component {
         </header>
 
         <main className='App_main'>
-          {this.state.hasError && <p className='red'>There is an error!</p>}
           <Switch>
             <Route
               exact

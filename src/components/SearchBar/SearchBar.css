@@ -1,4 +1,35 @@
 .SearchForm {
+    height: 180px;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-top: 15px;
 }
+
+.formContainer {
+    width: 250px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.resultsContainer {
+    width: 50%;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+label {
+    display: block;
+    font-size: 14px;
+    font-weight: 500;
+    margin-bottom: 4px;
+} 
+
+.loaderContainer {
+    width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 80px;
+}
+
+

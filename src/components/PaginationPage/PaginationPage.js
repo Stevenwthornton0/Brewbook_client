@@ -1,68 +1,83 @@
 import React, { Component } from 'react';
+import BreweryListContext from '../../contexts/BreweryListContext';
 import Pagination from './Pagination/Pagination';
+import './PaginationPage.css'
 
 class PaginationPage extends Component {
+    static contextType = BreweryListContext;
+
     constructor(props) {
         super(props)
         this.state = {
             renderPagination: null,
             pages: []
-        }
+        }  
     }
 
     static defaultProps = {
         handlePagination: () => {},
         handlePrev: () => {},
-        handleNext: () => {}
+        handleNext: () => {},
+        currentPage: 1
     }
 
     componentDidMount() {
-        let pages = [];
-        let maxPage = this.props.maxPage;
-
-        const add = () => {
-            if (maxPage < 1) {
-                pages.sort(function(a, b){return a-b})
-                this.setState({
-                    pages: pages,
-                    renderPagination: true
-                })
-            } else {
-                pages.push(maxPage)
-                maxPage = maxPage - 1
-                add()
-            }
-        }
-
-        add()
+        this.setState({
+            renderPagination: true
+        })
     }
-    
+
 
     createPagination = () => {
+        const { maxPage, currentPage } = this.props;
         const paginationPage = () => {
-            const pages = this.state.pages
+            const { pages } = this.context;
             return pages.map(page => 
-                <Pagination 
+                <Pagination
+                    currentPage={this.props.currentPage} 
                     key={page}
                     page={page}
                     handlePagination={this.props.handlePagination}
                 />
             )
         }
+        
+        if (maxPage === 1 || maxPage === 0) {
+            return null
+        }
+        
+        if (currentPage === 1) {
+            return (
+                <div className='pagination'>
+                    <button className='left disabled' disabled={true}>prev</button>
+                    {paginationPage()}
+                    <button className='right' onClick={() => {this.props.handleNext()}}>next</button>
+                </div>
+            )
+
+        } else if (currentPage === maxPage) {
+            return (
+                <div className='pagination'>
+                    <button className='left' onClick={() => {this.props.handlePrev()}}>prev</button>
+                    {paginationPage()}
+                    <button className='right disabled' disabled={true}>next</button>
+                </div>
+            )
+        }
 
         return (
-            <div className='pagination-container'>
-                <button onClick={() => {this.props.handlePrev()}}>prev</button>
+            <div className='pagination'>
+                <button className='left' onClick={() => {this.props.handlePrev()}}>prev</button>
                 {paginationPage()}
-                <button onClick={() => {this.props.handleNext()}}>next</button>
+                <button className='right' onClick={() => {this.props.handleNext()}}>next</button>
             </div>
         )
 
     }
     
-    render() {  
+    render() {
         return (
-            <div>
+            <div className='paginationContainer'>
                 {this.state.renderPagination ? this.createPagination() : null}
             </div>
         )

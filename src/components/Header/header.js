@@ -2,12 +2,14 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import TokenService from '../../services/token-service';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { Hyph } from '../../Utils/Utils';
 import './header.css';
 
 export default class Header extends Component {
 
     handleLogoutClick = () => {
         TokenService.clearAuthToken()
+        window.location.reload()
     }
 
     renderLogoutLink() {
@@ -28,7 +30,7 @@ export default class Header extends Component {
                 <Link to='/register'>
                     Register
                 </Link>
-                {' - '}
+                <Hyph/>
                 <Link to='/login'>
                     Login
                 </Link>
@@ -39,16 +41,18 @@ export default class Header extends Component {
     render() {
         return (
             <nav className='header'>
-                <h1>
-                    <Link to='/'>
-                        <FontAwesomeIcon className='logo' icon='beer' />
-                        {' '}
-                        brewbook
+                <div className='header_container'>
+                    <Link to='/' className='logo'>
+                        <h1>
+                            <FontAwesomeIcon className='logo' icon='beer' />
+                            {' '}
+                            brewbook
+                        </h1>
                     </Link>
-                </h1>
-                {TokenService.hasAuthToken()
-                    ? this.renderLogoutLink()
-                    : this.renderLoginLink()}
+                    {TokenService.hasAuthToken()
+                        ? this.renderLogoutLink()
+                        : this.renderLoginLink()}
+                </div>
             </nav>
         )
     }

@@ -9,6 +9,7 @@ const BreweryContext = React.createContext({
     reviews: [],
     error: null,
     setError: () => {},
+    setAdmin: () => {},
     clearError: () => {},
     setBrewery: () => {},
     clearBrewery: () => {},
@@ -21,11 +22,16 @@ export default BreweryContext;
 export class BreweryProvider extends Component {
     state = {
         brewery: nullBrewery,
-        error: null
+        error: null,
+        isAdmin: false
     }
 
     setError = error => {
         this.setState({ error })
+    }
+
+    setAdmin = isAdmin => {
+        this.setState({ isAdmin })
     }
 
     clearError = () => {
@@ -57,7 +63,9 @@ export class BreweryProvider extends Component {
             brewery: this.state.brewery,
             reviews: this.state.reviews,
             error: this.state.error,
+            isAdmin: this.state.isAdmin,
             setError: this.setError,
+            setAdmin: this.setAdmin,
             clearError: this.clearError,
             setBrewery: this.setBrewery,
             setReviews: this.setReviews,

@@ -1,9 +1,12 @@
-.App_main {
-    margin-top: 100px;
-}
 
 .Header {
-    width: 95%;
+    width: 100%;
     margin: auto auto;
+    background-color: #424242;
+}
 
+.App_main {
+    background-color: #f5f5f5;
+    min-height: calc(100vh - 76px);
+    padding-bottom: 48px;
 }

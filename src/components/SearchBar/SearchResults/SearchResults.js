@@ -1,21 +1,25 @@
 import React, { Component } from 'react';
 import BreweryListContext from '../../../contexts/BreweryListContext';
 import BreweryList from './BreweryList/BreweryList';
+import './SearchResults.css';
 
 
 class SearchResults extends Component {
     static contextType = BreweryListContext;
 
+    static defaultProps = {
+        numResults: 0
+    }
+
     render() {
+        const { numResults } = this.props;
         let content
         if (this.context.error) {
             content = <p>There is an error</p>
-        } else if (!this.context.breweryList) {
-            content = <p>Loading...</p>
         } else {
             content = 
-                <div>
-                    <h2>Results for {this.props.city}, {this.props.state}</h2>
+                <div className='SearchResults'>
+                    <h2>{numResults} Results for {this.props.city}, {this.props.state}</h2>
                     <div className='breweryContainer'>
                         <BreweryList />
                     </div>

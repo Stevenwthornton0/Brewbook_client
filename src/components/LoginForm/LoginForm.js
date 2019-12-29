@@ -1,11 +1,16 @@
 import React, { Component } from 'react';
 import TokenService from '../../services/token-service';
 import AuthApiService from '../../services/auth-api-service.js';
+import BreweryContext from '../../contexts/BreweryContext';
+import { Button, Input } from '../../Utils/Utils';
+import './LoginForm.css';
 
 export default class LoginForm extends Component {
     static defaultProps = {
         onLoginSuccess: () => {}
     };
+
+    static contextType = BreweryContext;
 
     state = { error: null };
 
@@ -19,10 +24,11 @@ export default class LoginForm extends Component {
             password: password.value
         })
             .then(res => {
+                TokenService.saveUsername(user_name.value)
                 user_name.value = ''
                 password.value = ''
                 TokenService.saveAuthToken(res.authToken)
-                console.log(this.props.onLoginSuccess())
+                this.props.onLoginSuccess()
             })
             .catch(res => {
                 this.setState({ error: res.error })
@@ -43,7 +49,7 @@ export default class LoginForm extends Component {
                     <label htmlFor='LoginForm_user_name'>
                         User Name
                     </label>
-                    <input
+                    <Input
                         className='Input user_name'
                         required
                         name='user_name'
@@ -54,7 +60,7 @@ export default class LoginForm extends Component {
                     <label htmlFor='LoginForm_password'>
                         Password
                     </label>
-                    <input
+                    <Input
                         className='Input password'
                         required
                         name='password'
@@ -62,9 +68,9 @@ export default class LoginForm extends Component {
                         id='LoginForm_passsword'
                     />
                 </div>
-                <button type='submit'>
-                    Login
-                </button>
+                <Button type='submit'>
+                    Log in
+                </Button>
             </form>
         )
     }
