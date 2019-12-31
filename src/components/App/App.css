@@ -10,3 +10,7 @@
     min-height: calc(100vh - 76px);
     padding-bottom: 48px;
 }
+
+.error {
+    color: red;
+}

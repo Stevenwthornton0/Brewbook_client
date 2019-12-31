@@ -6,3 +6,9 @@
     justify-content: space-between;
     overflow-wrap: break-word;
 }
+
+@media screen and (max-width: 500px) {
+    .ReviewForm {
+        width: 100%;
+    }
+}

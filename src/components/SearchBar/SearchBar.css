@@ -32,4 +32,10 @@ label {
     margin-top: 80px;
 }
 
+@media screen and (max-width: 500px) {
+    .resultsContainer {
+        width: 80%;
+    }
+}
+
 

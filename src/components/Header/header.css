@@ -36,4 +36,16 @@ nav {
     margin: 20px 0;
 }
 
+@media screen and (max-width: 500px) {
+    .header_container {
+        width: 90%;
+    }
+    
+    /* .Hyph {
+        display: none;
+    } */
 
+    .header_logged-out > a {
+        font-size: 18px;
+    }
+}

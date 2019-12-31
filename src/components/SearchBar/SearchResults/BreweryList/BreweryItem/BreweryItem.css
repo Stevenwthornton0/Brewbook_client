@@ -37,3 +37,23 @@ section > a {
     text-align: end;
 }
 
+
+@media screen and (max-width: 500px) {
+    .breweryItem {
+        padding: 20px 30px;
+        padding-bottom: 30px;
+    }
+
+    .container1 {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .container3 {
+        text-align: start;
+    }
+
+    .url {
+        margin-left: 10px;
+    }
+}

@@ -11,3 +11,12 @@
     font-size: 26px;
     font-weight: 400;
 }
+
+
+@media screen and (max-width: 500px) {
+    .loginPage > h2 {
+        align-self: center;
+        margin-top: 110px;
+    }
+
+}

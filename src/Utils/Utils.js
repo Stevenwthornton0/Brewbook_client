@@ -19,11 +19,13 @@ export function displayPhone(brewery) {
 
 export function displayWebsite_1(brewery) {
     if (brewery.website_url) {
+      let url = brewery.website_url
+      url = url.replace(/(^\w+:|^)\/\//, '');
+      url = url.replace('www.', '');
         return (
             <p className='brewery website'>
               <FontAwesomeIcon className='logo' icon='mouse' />
-              {' '}
-              {brewery.website_url}
+              <span className='url'>{url}</span>
             </p>
         )
     }
@@ -32,11 +34,14 @@ export function displayWebsite_1(brewery) {
 
 export function displayWebsite_2(brewery) {
   if (brewery.website_url) {
+    let url = brewery.website_url
+    url = url.replace(/(^\w+:|^)\/\//, '');
+    url = url.replace('www.', '');
       return (
           <a href={brewery.website_url} target='_blank' rel="noopener noreferrer" className='brewery website_2'>
             <FontAwesomeIcon className='logo' icon='mouse' />
             {' '}
-            {brewery.website_url}
+            {url}
           </a>
       )
   }
