@@ -1,0 +1,31 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`PaginationPage smoke test renders without crashing 1`] = `
+<PaginationPage
+  currentPage={1}
+  handleNext={[Function]}
+  handlePagination={[Function]}
+  handlePrev={[Function]}
+>
+  <div
+    className="paginationContainer"
+  >
+    <div
+      className="pagination"
+    >
+      <button
+        className="left disabled"
+        disabled={true}
+      >
+        prev
+      </button>
+      <button
+        className="right"
+        onClick={[Function]}
+      >
+        next
+      </button>
+    </div>
+  </div>
+</PaginationPage>
+`;

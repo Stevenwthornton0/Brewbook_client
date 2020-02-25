@@ -1,0 +1,47 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SearchBar smoke test renders without crashing 1`] = `
+<div
+  className="mainContainer"
+>
+  <div
+    className="formContainer"
+  >
+    <form
+      className="SearchForm"
+      onSubmit={[Function]}
+    >
+      <div
+        className="city"
+      >
+        <label
+          htmlFor="SearchForm_city"
+        >
+          City
+        </label>
+        <Input
+          id="SearchForm_city"
+          name="city"
+          required={true}
+          type="text"
+        />
+      </div>
+      <div
+        className="state"
+      >
+        <label
+          htmlFor="SearchForm_state"
+        >
+          State
+        </label>
+        <States />
+      </div>
+      <Button
+        type="submit"
+      >
+        Search
+      </Button>
+    </form>
+  </div>
+</div>
+`;

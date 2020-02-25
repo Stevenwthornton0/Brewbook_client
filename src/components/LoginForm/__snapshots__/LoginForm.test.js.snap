@@ -1,0 +1,53 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`LoginForm smoke test renders without crashing 1`] = `
+<div>
+  <form
+    className="LoginForm"
+    onSubmit={[Function]}
+  >
+    <div
+      role="alert"
+    />
+    <div
+      className="user_name"
+    >
+      <label
+        htmlFor="LoginForm_user_name"
+      >
+        User Name
+      </label>
+      <Input
+        className="Input user_name"
+        id="LoginForm_user_name"
+        name="user_name"
+        required={true}
+      />
+    </div>
+    <div
+      className="password"
+    >
+      <label
+        htmlFor="LoginForm_password"
+      >
+        Password
+      </label>
+      <Input
+        className="Input password"
+        id="LoginForm_passsword"
+        name="password"
+        required={true}
+        type="password"
+      />
+    </div>
+    <Button
+      type="submit"
+    >
+      Log in
+    </Button>
+  </form>
+  <div
+    className="loaderContainer"
+  />
+</div>
+`;

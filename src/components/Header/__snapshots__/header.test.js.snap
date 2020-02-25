@@ -1,0 +1,55 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`header smoke test renders without crashing 1`] = `
+<nav
+  className="header"
+>
+  <div
+    className="header_container"
+  >
+    <Link
+      className="logo"
+      to="/"
+    >
+      <h1>
+        <FontAwesomeIcon
+          border={false}
+          className="logo"
+          fixedWidth={false}
+          flip={null}
+          icon="beer"
+          inverse={false}
+          listItem={false}
+          mask={null}
+          pull={null}
+          pulse={false}
+          rotation={null}
+          size={null}
+          spin={false}
+          swapOpacity={false}
+          symbol={false}
+          title=""
+          transform={null}
+        />
+         
+        brewbook
+      </h1>
+    </Link>
+    <div
+      className="header_logged-out"
+    >
+      <Link
+        to="/register"
+      >
+        Register
+      </Link>
+      <Hyph />
+      <Link
+        to="/login"
+      >
+        Login
+      </Link>
+    </div>
+  </div>
+</nav>
+`;

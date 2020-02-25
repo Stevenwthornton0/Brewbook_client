@@ -1,0 +1,20 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SearchResults smoke test renders without crashing 1`] = `
+<div>
+  <div
+    className="SearchResults"
+  >
+    <h2>
+      0
+       Results for 
+      , 
+    </h2>
+    <div
+      className="breweryContainer"
+    >
+      <BreweryList />
+    </div>
+  </div>
+</div>
+`;

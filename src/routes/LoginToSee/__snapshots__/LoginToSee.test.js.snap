@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`LoginToSee smoke test renders without crashing 1`] = `
+<section
+  className="loginPage"
+>
+  <h2>
+    Login 
+    <span
+      className="smaller"
+    >
+      to view full brewery details
+    </span>
+  </h2>
+  <LoginForm
+    onLoginSuccess={[Function]}
+  />
+</section>
+`;

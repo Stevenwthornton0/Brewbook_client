@@ -1,0 +1,64 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ReviewForm smoke test renders without crashing 1`] = `
+<div>
+  <h3>
+    Post a Review
+  </h3>
+  <form
+    className="ReviewForm"
+    onSubmit={[Function]}
+  >
+    <label>
+      Rating
+    </label>
+    <select
+      className="rating"
+      id="rating"
+    >
+      <option
+        value="1"
+      >
+        1
+      </option>
+      <option
+        value="2"
+      >
+        2
+      </option>
+      <option
+        value="3"
+      >
+        3
+      </option>
+      <option
+        value="4"
+      >
+        4
+      </option>
+      <option
+        value="5"
+      >
+        5
+      </option>
+    </select>
+    <label>
+      Review
+    </label>
+    <Textarea
+      aria-label="Leave a review..."
+      className="reviewText"
+      cols="30"
+      id="text"
+      placeholder="Leave a review.."
+      required={true}
+      rows="4"
+    />
+    <Button
+      type="submit"
+    >
+      Post
+    </Button>
+  </form>
+</div>
+`;

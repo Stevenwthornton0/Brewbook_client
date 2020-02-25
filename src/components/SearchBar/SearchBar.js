@@ -166,6 +166,8 @@ class SearchBar extends Component {
             .then(this.context.setBreweryList)
             .catch(this.context.setError)
 
+        
+
     }
     
     displayResults() {

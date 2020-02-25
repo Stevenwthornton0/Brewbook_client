@@ -1,0 +1,89 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`BreweryItem smoke test BreweryItem renders without crashing 1`] = `
+<Link
+  className="brewery"
+  to="/brewery/6780"
+>
+  <section
+    className="breweryItem"
+  >
+    <h3>
+      Jester King Brewery
+    </h3>
+    <div
+      className="container1"
+    >
+      <div
+        className="container2"
+      >
+        <p>
+          13187 Fitzhugh Rd
+        </p>
+        <p>
+          Austin
+          , 
+          Texas
+        </p>
+      </div>
+      <div
+        className="container3"
+      >
+        <p
+          className="brewery website"
+        >
+          <FontAwesomeIcon
+            border={false}
+            className="logo"
+            fixedWidth={false}
+            flip={null}
+            icon="mouse"
+            inverse={false}
+            listItem={false}
+            mask={null}
+            pull={null}
+            pulse={false}
+            rotation={null}
+            size={null}
+            spin={false}
+            swapOpacity={false}
+            symbol={false}
+            title=""
+            transform={null}
+          />
+          <span
+            className="url"
+          >
+            jesterkingbrewery.com
+          </span>
+        </p>
+        <p
+          className="brewery phone"
+        >
+          <FontAwesomeIcon
+            border={false}
+            className="logo"
+            fixedWidth={false}
+            flip={null}
+            icon="phone"
+            inverse={false}
+            listItem={false}
+            mask={null}
+            pull={null}
+            pulse={false}
+            rotation={null}
+            size={null}
+            spin={false}
+            swapOpacity={false}
+            symbol={false}
+            title=""
+            transform={null}
+          />
+           
+          512-537-5100
+        </p>
+      </div>
+    </div>
+  </section>
+</Link>
+`;

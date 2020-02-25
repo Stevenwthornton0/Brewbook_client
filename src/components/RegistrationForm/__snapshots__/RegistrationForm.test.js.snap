@@ -1,0 +1,101 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`RegistrationForm smoke test renders without crashing 1`] = `
+<form
+  className="RegistrationForm"
+  onSubmit={[Function]}
+>
+  <div
+    role="alert"
+  />
+  <div
+    className="first_name"
+  >
+    <label
+      htmlFor="RegistrationForm_first-name"
+    >
+      First Name
+    </label>
+    <Input
+      id="RegistrationForm_first-name"
+      name="first_name"
+      required={true}
+      type="text"
+    />
+  </div>
+  <div
+    className="last_name"
+  >
+    <label
+      htmlFor="RegistrationForm_last-name"
+    >
+      Last Name
+    </label>
+    <Input
+      id="RegistrationForm_last-name"
+      name="last_name"
+      required={true}
+      type="text"
+    />
+  </div>
+  <div
+    className="user_name"
+  >
+    <label
+      htmlFor="RegistrationForm_user-name"
+    >
+      User Name
+    </label>
+    <Input
+      id="RegistrationForm_user-name"
+      name="user_name"
+      required={true}
+      type="text"
+    />
+  </div>
+  <div
+    className="password"
+  >
+    <label
+      htmlFor="RegistrationForm_password"
+    >
+      Password
+    </label>
+    <Input
+      id="RegistrationForm_password"
+      name="password"
+      required={true}
+      type="password"
+    />
+  </div>
+  <div
+    className="requires"
+  >
+    <p
+      className="requires"
+    >
+      Requirements:
+    </p>
+    <p>
+      • an uppercase letter
+    </p>
+    <p>
+      • a lowercase letter
+    </p>
+    <p>
+      • a number
+    </p>
+    <p>
+      • a special character
+    </p>
+  </div>
+  <Button
+    type="submit"
+  >
+    Register
+  </Button>
+  <div
+    className="loaderContainer"
+  />
+</form>
+`;
