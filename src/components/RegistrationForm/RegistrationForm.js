@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import AuthApiService from '../../services/auth-api-service';
+import TokenService from '../../services/token-service';
+import LoaderSpinner from '../../Utils/LoaderSpinner';
 import { Input, Button } from '../../Utils/Utils';
 import './RegistrationForm.css';
 
@@ -8,7 +10,10 @@ export default class RegistrationForm extends Component {
         onRegistrationSuccess: () => {}
     }
 
-    state = { error: null };
+    state = { 
+        error: null,
+        waiting: false 
+    };
 
     
     toSnakeCase = function(string) {
@@ -22,7 +27,7 @@ export default class RegistrationForm extends Component {
         ev.preventDefault()
         const { first_name, last_name, user_name, password } = ev.target;
 
-        this.setState({ error: null });
+        this.setState({ error: null, waiting: true });
         AuthApiService.postUser({
             first_name: first_name.value,
             last_name: last_name.value,
@@ -106,6 +111,9 @@ export default class RegistrationForm extends Component {
                 <Button type='submit'>
                     Register
                 </Button>
+                <div className='loaderContainer'>
+                    {this.state.waiting ? <LoaderSpinner /> : null}
+                </div>
             </form>
         )
     }
