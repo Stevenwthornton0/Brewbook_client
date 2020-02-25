@@ -1,4 +1,3 @@
-This project was created by Steven Thornton
 
 # Brewbook
 
