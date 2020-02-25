@@ -8,6 +8,7 @@ import LoginPage from '../../routes/LoginPage/LoginPage';
 import RegistrationPage from '../../routes/RegistrationPage/RegistrationPage';
 import NotFoundPage from '../../routes/NotFoundPage/NotFoundPage';
 import BreweryPage from '../../routes/BreweryPage/BreweryPage';
+import LoginToSee from '../../routes/LoginToSee/LoginToSee';
 import './App.css';
 
 
@@ -37,6 +38,10 @@ class App extends React.Component {
             <PublicOnlyRoute
               path={'/login'}
               component={LoginPage}
+            />
+            <PublicOnlyRoute
+              path={'/loginfirst'}
+              component={LoginToSee}
             />
             <PublicOnlyRoute
               path={'/register'}

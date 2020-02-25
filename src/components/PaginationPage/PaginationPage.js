@@ -85,3 +85,5 @@ class PaginationPage extends Component {
 }
 
 export default PaginationPage;
+
+// creates a pagination based on the amount of pages and responses to a search

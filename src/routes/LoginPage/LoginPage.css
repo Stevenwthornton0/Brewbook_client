@@ -12,6 +12,9 @@
     font-weight: 400;
 }
 
+.smaller {
+    font-size: 14px;
+}
 
 @media screen and (max-width: 500px) {
     .loginPage > h2 {

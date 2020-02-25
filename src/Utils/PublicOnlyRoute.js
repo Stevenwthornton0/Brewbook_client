@@ -15,3 +15,5 @@ export default function PublicOnlyRoute({ component, ...props }) {
     />
   )
 }
+
+// redirects logged in users to homepage

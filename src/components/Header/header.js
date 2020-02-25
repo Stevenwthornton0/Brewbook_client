@@ -57,3 +57,5 @@ export default class Header extends Component {
         )
     }
 }
+
+// displays navigation to registration and login/logout

@@ -12,7 +12,7 @@ export default function PrivateOnlyRoute({ component, ...props }) {
           ? <Component {...componentProps} />
           : <Redirect
               to={{
-                pathname: '/login',
+                pathname: '/loginfirst  ',
                 state: { from: componentProps.location }
               }}
             />
@@ -20,3 +20,5 @@ export default function PrivateOnlyRoute({ component, ...props }) {
     />
   )
 }
+
+// redirects users who have not logged in to the login page
