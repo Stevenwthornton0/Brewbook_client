@@ -12,7 +12,7 @@ export default function PrivateOnlyRoute({ component, ...props }) {
           ? <Component {...componentProps} />
           : <Redirect
               to={{
-                pathname: '/loginfirst  ',
+                pathname: '/loginfirst',
                 state: { from: componentProps.location }
               }}
             />

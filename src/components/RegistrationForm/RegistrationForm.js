@@ -96,6 +96,13 @@ export default class RegistrationForm extends Component {
                         id='RegistrationForm_password'
                     />
                 </div>
+                <div className='requires'>
+                    <p className='requires'>Requirements:</p>
+                    <p>&bull; an uppercase letter</p>
+                    <p>&bull; a lowercase letter</p>
+                    <p>&bull; a number</p>
+                    <p>&bull; a special character</p>
+                </div>
                 <Button type='submit'>
                     Register
                 </Button>

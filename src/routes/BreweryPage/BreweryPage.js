@@ -67,7 +67,7 @@ class BreweryPage extends Component {
     }
 
     render() {
-        const { brewery, reviews, error, isAdmin } = this.context
+        const { brewery, reviews, error, isAdmin } = this.context;
         let content
         if (error) {
             content = <p>There was an error</p>

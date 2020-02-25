@@ -13,7 +13,7 @@
 }
 
 .resultsContainer {
-    width: 50%;
+    width: 80%;
     margin-right: auto;
     margin-left: auto;
 }
@@ -32,9 +32,9 @@ label {
     margin-top: 80px;
 }
 
-@media screen and (max-width: 500px) {
+@media screen and (min-width: 500px) {
     .resultsContainer {
-        width: 80%;
+        width: 50%;
     }
 }
 

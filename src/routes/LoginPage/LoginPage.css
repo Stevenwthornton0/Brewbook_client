@@ -7,19 +7,20 @@
 }
 
 .loginPage > h2 {
-    margin-top: 70px;
+    margin-top: 110px;
     font-size: 26px;
     font-weight: 400;
+    align-self: center;
 }
 
 .smaller {
     font-size: 14px;
 }
 
-@media screen and (max-width: 500px) {
+@media screen and (min-width: 500px) {
     .loginPage > h2 {
-        align-self: center;
-        margin-top: 110px;
+        align-self: flex-start;
+        margin-top: 70px;
     }
 
 }

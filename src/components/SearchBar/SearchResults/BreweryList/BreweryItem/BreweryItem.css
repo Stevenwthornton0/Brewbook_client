@@ -12,8 +12,8 @@ section > a {
     margin-top: 30px;
     border: 2px solid #424242;
     border-radius: 4px;
-    padding: 30px 40px;
-    padding-bottom: 50px;
+    padding: 20px 30px;
+    padding-bottom: 30px;
 }
 
 .breweryItem > h3 {
@@ -29,31 +29,31 @@ section > a {
 .container1 {
     width: 100%;
     display: flex;
-    flex-direction: row;
-    justify-content: space-between;
+    flex-direction: column;
 }
 
 .container3 {
-    text-align: end;
+    text-align: start;
+}
+
+.url {
+    margin-left: 5px;
 }
 
 
-@media screen and (max-width: 500px) {
+@media screen and (min-width: 500px) {
     .breweryItem {
-        padding: 20px 30px;
-        padding-bottom: 30px;
+        padding: 30px 40px;
+        padding-bottom: 50px;
     }
 
     .container1 {
         display: flex;
-        flex-direction: column;
+        flex-direction: row;
+        justify-content: space-between;
     }
 
     .container3 {
-        text-align: start;
-    }
-
-    .url {
-        margin-left: 10px;
+        text-align: end;
     }
 }

@@ -1,0 +1,669 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`All routes App renders without crashing 1`] = `
+<div
+  className="App"
+>
+  <header
+    className="Header"
+  >
+    <Header />
+  </header>
+  <main
+    className="App_main"
+  >
+    <Switch>
+      <Route
+        component={[Function]}
+        exact={true}
+        path="/"
+      />
+      <PublicOnlyRoute
+        component={[Function]}
+        path="/login"
+      />
+      <PublicOnlyRoute
+        component={[Function]}
+        path="/loginfirst"
+      />
+      <PublicOnlyRoute
+        component={[Function]}
+        path="/register"
+      />
+      <PrivateOnlyRoute
+        component={[Function]}
+        path="/brewery/:breweryId"
+      />
+      <Route
+        component={[Function]}
+      />
+    </Switch>
+  </main>
+</div>
+`;
+
+exports[`All routes BreweryPage renders without crashing 1`] = `
+<BreweryPage
+  match={
+    Object {
+      "params": Object {},
+    }
+  }
+>
+  <div>
+    <div
+      className="breweryPage"
+    >
+      <h1 />
+      <div
+        className="contact-container"
+      />
+      <h2>
+        Reviews
+      </h2>
+      <breweryReviews
+        deleteReview={[Function]}
+        reviews={Array []}
+      >
+        <p>
+          No one has posted a review
+        </p>
+      </breweryReviews>
+      <ReviewForm>
+        <div>
+          <h3>
+            Post a Review
+          </h3>
+          <form
+            className="ReviewForm"
+            onSubmit={[Function]}
+          >
+            <label>
+              Rating
+            </label>
+            <select
+              className="rating"
+              id="rating"
+            >
+              <option
+                value="1"
+              >
+                1
+              </option>
+              <option
+                value="2"
+              >
+                2
+              </option>
+              <option
+                value="3"
+              >
+                3
+              </option>
+              <option
+                value="4"
+              >
+                4
+              </option>
+              <option
+                value="5"
+              >
+                5
+              </option>
+            </select>
+            <label>
+              Review
+            </label>
+            <Textarea
+              aria-label="Leave a review..."
+              className="reviewText"
+              cols="30"
+              id="text"
+              placeholder="Leave a review.."
+              required={true}
+              rows="4"
+            >
+              <textarea
+                aria-label="Leave a review..."
+                className="Textarea reviewText"
+                cols="30"
+                id="text"
+                placeholder="Leave a review.."
+                required={true}
+                rows="4"
+              />
+            </Textarea>
+            <Button
+              type="submit"
+            >
+              <button
+                className="Button "
+                type="submit"
+              >
+                Post
+              </button>
+            </Button>
+          </form>
+        </div>
+      </ReviewForm>
+    </div>
+  </div>
+</BreweryPage>
+`;
+
+exports[`All routes Header renders without crashing 1`] = `
+<nav
+  className="header"
+>
+  <div
+    className="header_container"
+  >
+    <Link
+      className="logo"
+      to="/"
+    >
+      <h1>
+        <FontAwesomeIcon
+          border={false}
+          className="logo"
+          fixedWidth={false}
+          flip={null}
+          icon="beer"
+          inverse={false}
+          listItem={false}
+          mask={null}
+          pull={null}
+          pulse={false}
+          rotation={null}
+          size={null}
+          spin={false}
+          swapOpacity={false}
+          symbol={false}
+          title=""
+          transform={null}
+        />
+         
+        brewbook
+      </h1>
+    </Link>
+    <div
+      className="header_logged-out"
+    >
+      <Link
+        to="/register"
+      >
+        Register
+      </Link>
+      <Hyph />
+      <Link
+        to="/login"
+      >
+        Login
+      </Link>
+    </div>
+  </div>
+</nav>
+`;
+
+exports[`All routes LoginPage renders without crashing 1`] = `
+<section
+  className="loginPage"
+>
+  <h2>
+    Login
+  </h2>
+  <LoginForm
+    onLoginSuccess={[Function]}
+  />
+</section>
+`;
+
+exports[`All routes LoginToSee renders without crashing 1`] = `
+<section
+  className="loginPage"
+>
+  <h2>
+    Login 
+    <span
+      className="smaller"
+    >
+      to view full brewery details
+    </span>
+  </h2>
+  <LoginForm
+    onLoginSuccess={[Function]}
+  />
+</section>
+`;
+
+exports[`All routes RegistrationPage renders without crashing 1`] = `
+<section
+  className="registrationPage"
+>
+  <h2>
+    Register
+  </h2>
+  <RegistrationForm
+    onRegistrationSuccess={[Function]}
+  />
+</section>
+`;
+
+exports[`All routes ReviewsListPage renders without crashing 1`] = `
+<div
+  className="searchForm"
+>
+  <h2>
+    Search for a brewery
+  </h2>
+  <SearchBar />
+</div>
+`;
+
+exports[`all components BreweryItem renders without crashing 1`] = `
+<Link
+  className="brewery"
+  to="/brewery/6780"
+>
+  <section
+    className="breweryItem"
+  >
+    <h3>
+      Jester King Brewery
+    </h3>
+    <div
+      className="container1"
+    >
+      <div
+        className="container2"
+      >
+        <p>
+          13187 Fitzhugh Rd
+        </p>
+        <p>
+          Austin
+          , 
+          Texas
+        </p>
+      </div>
+      <div
+        className="container3"
+      >
+        <p
+          className="brewery website"
+        >
+          <FontAwesomeIcon
+            border={false}
+            className="logo"
+            fixedWidth={false}
+            flip={null}
+            icon="mouse"
+            inverse={false}
+            listItem={false}
+            mask={null}
+            pull={null}
+            pulse={false}
+            rotation={null}
+            size={null}
+            spin={false}
+            swapOpacity={false}
+            symbol={false}
+            title=""
+            transform={null}
+          />
+          <span
+            className="url"
+          >
+            jesterkingbrewery.com
+          </span>
+        </p>
+        <p
+          className="brewery phone"
+        >
+          <FontAwesomeIcon
+            border={false}
+            className="logo"
+            fixedWidth={false}
+            flip={null}
+            icon="phone"
+            inverse={false}
+            listItem={false}
+            mask={null}
+            pull={null}
+            pulse={false}
+            rotation={null}
+            size={null}
+            spin={false}
+            swapOpacity={false}
+            symbol={false}
+            title=""
+            transform={null}
+          />
+           
+          512-537-5100
+        </p>
+      </div>
+    </div>
+  </section>
+</Link>
+`;
+
+exports[`all components BreweryList renders without crashing 1`] = `
+<BreweryList>
+  <div />
+</BreweryList>
+`;
+
+exports[`all components LoginForm renders without crashing 1`] = `
+<div>
+  <form
+    className="LoginForm"
+    onSubmit={[Function]}
+  >
+    <div
+      role="alert"
+    />
+    <div
+      className="user_name"
+    >
+      <label
+        htmlFor="LoginForm_user_name"
+      >
+        User Name
+      </label>
+      <Input
+        className="Input user_name"
+        id="LoginForm_user_name"
+        name="user_name"
+        required={true}
+      />
+    </div>
+    <div
+      className="password"
+    >
+      <label
+        htmlFor="LoginForm_password"
+      >
+        Password
+      </label>
+      <Input
+        className="Input password"
+        id="LoginForm_passsword"
+        name="password"
+        required={true}
+        type="password"
+      />
+    </div>
+    <Button
+      type="submit"
+    >
+      Log in
+    </Button>
+  </form>
+  <div
+    className="loaderContainer"
+  />
+</div>
+`;
+
+exports[`all components Pagination renders without crashing 1`] = `
+<button
+  className="disabled"
+  disabled={true}
+/>
+`;
+
+exports[`all components PaginationPage renders without crashing 1`] = `
+<PaginationPage
+  currentPage={1}
+  handleNext={[Function]}
+  handlePagination={[Function]}
+  handlePrev={[Function]}
+>
+  <div
+    className="paginationContainer"
+  >
+    <div
+      className="pagination"
+    >
+      <button
+        className="left disabled"
+        disabled={true}
+      >
+        prev
+      </button>
+      <button
+        className="right"
+        onClick={[Function]}
+      >
+        next
+      </button>
+    </div>
+  </div>
+</PaginationPage>
+`;
+
+exports[`all components RegistrationForm renders without crashing 1`] = `
+<form
+  className="RegistrationForm"
+  onSubmit={[Function]}
+>
+  <div
+    role="alert"
+  />
+  <div
+    className="first_name"
+  >
+    <label
+      htmlFor="RegistrationForm_first-name"
+    >
+      First Name
+    </label>
+    <Input
+      id="RegistrationForm_first-name"
+      name="first_name"
+      required={true}
+      type="text"
+    />
+  </div>
+  <div
+    className="last_name"
+  >
+    <label
+      htmlFor="RegistrationForm_last-name"
+    >
+      Last Name
+    </label>
+    <Input
+      id="RegistrationForm_last-name"
+      name="last_name"
+      required={true}
+      type="text"
+    />
+  </div>
+  <div
+    className="user_name"
+  >
+    <label
+      htmlFor="RegistrationForm_user-name"
+    >
+      User Name
+    </label>
+    <Input
+      id="RegistrationForm_user-name"
+      name="user_name"
+      required={true}
+      type="text"
+    />
+  </div>
+  <div
+    className="password"
+  >
+    <label
+      htmlFor="RegistrationForm_password"
+    >
+      Password
+    </label>
+    <Input
+      id="RegistrationForm_password"
+      name="password"
+      required={true}
+      type="password"
+    />
+  </div>
+  <div
+    className="requires"
+  >
+    <p
+      className="requires"
+    >
+      Requirements:
+    </p>
+    <p>
+      • an uppercase letter
+    </p>
+    <p>
+      • a lowercase letter
+    </p>
+    <p>
+      • a number
+    </p>
+    <p>
+      • a special character
+    </p>
+  </div>
+  <Button
+    type="submit"
+  >
+    Register
+  </Button>
+</form>
+`;
+
+exports[`all components ReviewForm renders without crashing 1`] = `
+<div>
+  <h3>
+    Post a Review
+  </h3>
+  <form
+    className="ReviewForm"
+    onSubmit={[Function]}
+  >
+    <label>
+      Rating
+    </label>
+    <select
+      className="rating"
+      id="rating"
+    >
+      <option
+        value="1"
+      >
+        1
+      </option>
+      <option
+        value="2"
+      >
+        2
+      </option>
+      <option
+        value="3"
+      >
+        3
+      </option>
+      <option
+        value="4"
+      >
+        4
+      </option>
+      <option
+        value="5"
+      >
+        5
+      </option>
+    </select>
+    <label>
+      Review
+    </label>
+    <Textarea
+      aria-label="Leave a review..."
+      className="reviewText"
+      cols="30"
+      id="text"
+      placeholder="Leave a review.."
+      required={true}
+      rows="4"
+    />
+    <Button
+      type="submit"
+    >
+      Post
+    </Button>
+  </form>
+</div>
+`;
+
+exports[`all components SearchBar renders without crashing 1`] = `
+<div
+  className="mainContainer"
+>
+  <div
+    className="formContainer"
+  >
+    <form
+      className="SearchForm"
+      onSubmit={[Function]}
+    >
+      <div
+        className="city"
+      >
+        <label
+          htmlFor="SearchForm_city"
+        >
+          City
+        </label>
+        <Input
+          id="SearchForm_city"
+          name="city"
+          required={true}
+          type="text"
+        />
+      </div>
+      <div
+        className="state"
+      >
+        <label
+          htmlFor="SearchForm_state"
+        >
+          State
+        </label>
+        <States />
+      </div>
+      <Button
+        type="submit"
+      >
+        Search
+      </Button>
+    </form>
+  </div>
+</div>
+`;
+
+exports[`all components SearchResults renders without crashing 1`] = `
+<div>
+  <div
+    className="SearchResults"
+  >
+    <h2>
+      0
+       Results for 
+      , 
+    </h2>
+    <div
+      className="breweryContainer"
+    >
+      <BreweryList />
+    </div>
+  </div>
+</div>
+`;

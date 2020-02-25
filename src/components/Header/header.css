@@ -3,7 +3,7 @@
 }
 
 .header_container {
-    width: 95%;
+    width: 90%;
     margin-left: auto;
     margin-right: auto;
     display: flex;
@@ -36,16 +36,12 @@ nav {
     margin: 20px 0;
 }
 
-@media screen and (max-width: 500px) {
-    .header_container {
-        width: 90%;
-    }
-    
-    /* .Hyph {
-        display: none;
-    } */
+.header_logged-out > a {
+    font-size: 18px;
+}
 
-    .header_logged-out > a {
-        font-size: 18px;
+@media screen and (min-width: 500px) {
+    .header_container {
+        width: 95%;
     }
 }
