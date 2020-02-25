@@ -20,13 +20,13 @@ password: password
 ## Screenshots
 ### Desktop view
 
-![desktop home](public/screenshots/Brewbook_Homepage_Desktop)
-![desktop brewery](public/screenshots/Brewbook_brewery_desktop)
+![desktop home](public/screenshots/Brewbook_Homepage_Desktop.png)
+![desktop brewery](public/screenshots/Brewbook_brewery_desktop.png)
  
 ### Mobile view
 
-![mobile home](public/screenshots/Brewbook_homepage_mobile)
-![mobile brewery](public/screenshots/Brewbook_brewery_mobile)
+![mobile home](public/screenshots/Brewbook_homepage_mobile.png)
+![mobile brewery](public/screenshots/Brewbook_brewery_mobile.png)
 
 ## Summary
 
