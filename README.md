@@ -33,7 +33,7 @@ Brewbook is a psuedo social-media application that allows users to search for br
 
 ## Technologies
 - React
-- HTML 5
+- HTML5
 - CSS3
 - Jest/Enzyme
 

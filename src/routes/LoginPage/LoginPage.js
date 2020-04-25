@@ -19,11 +19,20 @@ class LoginPage extends Component {
 
     render() {
         return (
-            <section className='loginPage'>
-                <h2>Login</h2>
-                <LoginForm
-                    onLoginSuccess={this.handleLoginSuccess}
-                />
+            <section>
+                <div className='loginPage'>
+                    <h2>Login</h2>
+                    <LoginForm
+                        onLoginSuccess={this.handleLoginSuccess}
+                    />
+                </div>
+
+                <div className='demoUser'>
+                    <h3 clasName='bold'>Demo User</h3>
+                    <p>Username: dunder</p>
+                    <p>Password: password</p>
+                    <p>This account is an admin and will allow greater function within the app.</p>
+                </div>
             </section>
         )
     }

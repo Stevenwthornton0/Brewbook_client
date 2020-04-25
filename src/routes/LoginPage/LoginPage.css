@@ -17,10 +17,34 @@
     font-size: 14px;
 }
 
+
+.demoUser {
+    background-color: #bdbdbd;
+    width: 80%;
+    padding: 1em;
+    margin-right: auto;
+    margin-left: auto;
+    border-radius: 4px;
+}
+
+.demoUser > h3 {
+    width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+}
+
 @media screen and (min-width: 500px) {
     .loginPage > h2 {
         align-self: flex-start;
         margin-top: 70px;
+    }
+
+    .demoUser {
+        width: fit-content;
+    }
+
+    .demoUser > h3 {
+        margin-left: 0;
     }
 
 }
