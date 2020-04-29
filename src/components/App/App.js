@@ -9,6 +9,7 @@ import RegistrationPage from '../../routes/RegistrationPage/RegistrationPage';
 import NotFoundPage from '../../routes/NotFoundPage/NotFoundPage';
 import BreweryPage from '../../routes/BreweryPage/BreweryPage';
 import LoginToSee from '../../routes/LoginToSee/LoginToSee';
+import FrontPage from '../../routes/FrontPage/FrontPage';
 import './App.css';
 
 
@@ -30,9 +31,14 @@ class App extends React.Component {
 
         <main className='App_main'>
           <Switch>
-            <Route
+            <Route 
               exact
               path={'/'}
+              component={FrontPage}
+            />
+
+            <Route
+              path={'/search'}
               component={ReviewsListPage}
             />
             <PublicOnlyRoute
