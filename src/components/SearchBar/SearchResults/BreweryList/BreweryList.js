@@ -7,7 +7,6 @@ class BreweryList extends Component {
 
     renderBreweries() {
         let { breweryList } = this.context
-        console.log(breweryList)
         breweryList = breweryList.filter(brewery => brewery.brewery_type !== 'planning')
             return breweryList.map(brewery => 
                 <BreweryItem 
